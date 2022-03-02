@@ -1,0 +1,90 @@
+all_joints:
+- - 0
+- - 1
+- - 2
+- - 3
+- - 4
+- - 5
+- - 6
+- - 7
+- - 8
+- - 9
+- - 10
+- - 11
+- - 12
+- - 13
+all_joints_names:
+- vallecula
+- tongueRoot1
+- tongueRoot2
+- tongueBody1
+- tongueBody2
+- tongueDorsum1
+- tongueDorsum2
+- tongueBlade1
+- tongueBlade2
+- tongueTip1
+- tongueTip2
+- hyoid
+- mandible
+- shortTendon
+alpha_r: 0.02
+batch_size:
+crop_pad: 0
+cropratio: 0.4
+dataset: training-datasets\iteration-0\UnaugmentedDataSet_SpeechProductionFeb12\SpeechProduction_AW100shuffle1.mat
+dataset_type: imgaug
+decay_steps: 30000
+deterministic: false
+display_iters: 1000
+fg_fraction: 0.25
+global_scale: 0.8
+init_weights: E:\DLC_for_S_P_Alan_rerun_100-mirror_All\Ultrasound\dlc-models\iteration-0\SpeechProductionFeb12-trainset100shuffle1\train\snapshot-800000
+intermediate_supervision: false
+intermediate_supervision_layer: 12
+location_refinement: true
+locref_huber_loss: true
+locref_loss_weight: 0.05
+locref_stdev: 7.2801
+log_dir: log
+lr_init: 0.0005
+max_input_size: 1500
+mean_pixel:
+- 123.68
+- 116.779
+- 103.939
+metadataset: training-datasets\iteration-0\UnaugmentedDataSet_SpeechProductionFeb12\Documentation_data-SpeechProduction_100shuffle1.pickle
+min_input_size: 64
+mirror: true
+multi_step:
+- - 0.005
+  - 10000
+- - 0.02
+  - 430000
+- - 0.002
+  - 730000
+- - 0.001
+  - 1030000
+net_type: resnet_50
+num_joints: 14
+num_outputs: 1
+optimizer: sgd
+pairwise_huber_loss: false
+pairwise_predict: false
+partaffinityfield_predict: false
+pos_dist_thresh: 17
+project_path: C:\Users\localaccount\Documents\DLC_for_S_P_Alan_rerun_100-mirror_All\Ultrasound
+regularize: false
+rotation: 25
+rotratio: 0.4
+save_iters: 50000
+scale_jitter_lo: 0.5
+scale_jitter_up: 1.25
+scoremap_dir: test
+shuffle: true
+snapshot_prefix: E:\DLC_for_S_P_Alan_rerun_100-mirror_All\Ultrasound\dlc-models\iteration-0\SpeechProductionFeb12-trainset100shuffle1\train\snapshot
+stride: 8.0
+weigh_negatives: false
+weigh_only_present_joints: false
+weigh_part_predictions: false
+weight_decay: 0.0001
