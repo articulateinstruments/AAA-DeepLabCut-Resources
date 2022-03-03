@@ -8,10 +8,10 @@ points:0,1,2,3,4,5,6,7,8,9,10;11,12;12,13
 splinenames:DLC_Tongue,DLC_HyoidMandible,DLC_ShorttendonMandible
 
 // (float, optional parameter) The average Mean Square Distance (MSD) in millimetres between the model and human-labelled ground-truth, from research.
-// accuracy:1.5
+accuracy:1.5
 
 // (integer) The millisecond round-trip time from AAA to DLC and back. This parameter is updated automatically every time the model is used from AAA.
-latency:30
+latency:32
 
 // (integer in the range 0-2) What behaviour should be used to handle differences of aspect-ratio.
 //  0 = Squash the image to fit

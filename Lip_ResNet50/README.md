@@ -15,6 +15,16 @@ As the flesh of the lips moves, the model is trained to track the movement. This
 The model gives the most accurate results when the lips are centred in the image, with the camera oriented such that the nose is directly above the lips, and positioned/zoomed such that the distance between the commissures is approximately half the width of the image.
 
 
+----------
+Statistics
+----------
+This model has a Mean Square Distance to human-labelled ground-truth of:
+ - 19.0 mm
+
+Compared to the other models, the speed at which it can analyse data is:
+ - Slow
+
+
 ----------------------------------------------------------
 How does AAA automatically create splines from the points?
 ----------------------------------------------------------
