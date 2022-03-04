@@ -60,7 +60,9 @@ Installing DeepLabCut models
 ----------------------------
 You must make at least one Model available to _AAA_ or else it cannot use DeepLabCut to analyse data. Each Model is trained to perform a specific task, for example annotating tongue and mouth anatomy from mid-sagittal ultrasound images, or annotating lips from camera images captured facing the front of the mouth.
 
-Models trained by Articulate Instruments for use in speech production analysis and visual feedback are available for free download here. Over time the models available here may be updated to improve accuracy or performance, or new models might be added to perform different analyses.
+Models trained by Articulate Instruments for use in speech production analysis and visual feedback are available for <a href="#top">free download here</a> in this repository. Over time the models available here may be updated to improve accuracy or performance, or new models might be added to perform different analyses.
+
+
 
 Each model should be a folder containing:
  - `Snapshot` files
@@ -69,7 +71,8 @@ Each model should be a folder containing:
 
 Please put each such folder inside the `\DLCModels` folder in your _AAA_ directory. An example of correct folder structure is below.
 
-[![Example of correct file directory structure for installing Deep Lab Cut models](.Media/Model_Folder_Structure_Small.png)](.Media/Model_Folder_Structure.png)
+[![Example of correct file directory structure for installing Deep Lab Cut models](.Media/Model_Folder_Structure_Small.png#gh-dark-mode-only)](.Media/Model_Folder_Structure.png)
+[![Example of correct file directory structure for installing Deep Lab Cut models](.Media/Model_Folder_Structure_Small_Inverse.png#gh-light-mode-only)](.Media/Model_Folder_Structure.png)
 
 If no `\DLCModels` folder exists you may not be running a recent enough version of _AAA_ to support integrated DeepLabCut. Consider [updating your _AAA_ version](http://www.articulateinstruments.com/downloads/). If you have a sufficiently recent version of _AAA_ and the folder is still missing, you can safely create it yourself and put the model folders in it, as above.
 
