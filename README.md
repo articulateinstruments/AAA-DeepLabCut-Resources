@@ -71,8 +71,8 @@ Each model should be a folder containing:
 
 Please put each such folder inside the `\DLCModels` folder in your _AAA_ directory. An example of correct folder structure is below.
 
-[![Example of correct file directory structure for installing Deep Lab Cut models](.Media/Model_Folder_Structure_Small.png#gh-dark-mode-only)](.Media/Model_Folder_Structure.png)
-[![Example of correct file directory structure for installing Deep Lab Cut models](.Media/Model_Folder_Structure_Small_Inverse.png#gh-light-mode-only)](.Media/Model_Folder_Structure.png)
+![Example of correct file directory structure for installing Deep Lab Cut models](.Media/Model_Folder_Structure_Small.png#gh-dark-mode-only)
+![Example of correct file directory structure for installing Deep Lab Cut models](.Media/Model_Folder_Structure_Small_Inverse.png#gh-light-mode-only)
 
 If no `\DLCModels` folder exists you may not be running a recent enough version of _AAA_ to support integrated DeepLabCut. Consider [updating your _AAA_ version](http://www.articulateinstruments.com/downloads/). If you have a sufficiently recent version of _AAA_ and the folder is still missing, you can safely create it yourself and put the model folders in it, as above.
 
