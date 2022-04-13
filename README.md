@@ -130,6 +130,7 @@ Each model folder contains a file called `AAAmodel` which can be edited using an
 You can safely change the following properties of a model:
  - _Display name_
  - _How the tracked points get interpreted into AAA splines_
+ - _The colors used to distinguish each point during live-tracking_
 
 You can also change the following properties, but it is strongly advised that you do **not** modify them as their values are chosen to produce the most accurate tracking:
  - _What pixel resolution images should be resized to before being passed to DeepLabCut_
