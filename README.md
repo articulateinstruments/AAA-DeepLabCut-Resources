@@ -1,6 +1,6 @@
 > ## Contents
 > 1. [Prerequisites](#system-requirements)
-> 1. [Introduction](#what-is-deepLabCut)
+> 1. [Introduction](#what-is-deeplabcut)
 > 2. [First-time Setup](#using-deeplabcut-for-the-first-time)
 > 3. [Installing DeepLabCut Models](#installing-deeplabcut-models)
 > 4. [Analysing data and live-tracking](#using-deeplabcut-in-aaa)
@@ -45,16 +45,16 @@ DeepLabCut was created by [Mathis, A.](https://scholar.google.co.uk/citations?us
 -----------------------------------
 Using DeepLabCut for the first time
 -----------------------------------
-DeepLabCut is a powerful but often complicated software tool. Many people struggle a lot with their first time using it. To make life easier, _AAA_ handles most of the complicated stuff automatically so you can work with a much simpler interface. If you want to use DeepLabCut in a way not covered by AAA's simplified interface, [you can read a tutorial on using DeepLabCut's more advanced features with AAA here](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production#how-to-use-this-project). If you only want to fit 2D splines (either individually or as a batch process) and/or enable live-tracking then just follow the rest of the instructions in this document.
+DeepLabCut is a powerful but often complicated software tool. Many people struggle a lot with their first time using it. To make life easier, _AAA_ handles most of the complicated stuff automatically so you can work with a much simpler interface. If you want to use DeepLabCut in a way not covered by AAA's simplified interface, [you can read a tutorial on using DeepLabCut's more advanced features with AAA here](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production#readme). If you only want to fit 2D splines (either individually or as a batch process) and/or enable live-tracking then just follow the rest of the instructions in this document.
 
 If this is your first time using DeepLabCut, you will first need to manually install a free open-source software tool called [Anaconda](https://docs.conda.io/en/latest/miniconda.html). It is a popular data science tool which _AAA_ will automatically communicate with to install, update and run DeepLabCut. If you already have a full version of Anaconda installed you can use that instead.
 > There are two versions of the Anaconda software to choose between. [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a compact, simplified version of Anaconda that takes less file space on your computer and has everything needed to run DeepLabCut in AAA. However, it lacks the broad range of data science tools and pre-installed packages that are included in the [full version of Anaconda](https://www.anaconda.com/products/distribution#Downloads), which require a larger download and more hard-drive space. If you don't plan to use Anaconda for any other purpose than DeepLabCut in AAA then Miniconda is sufficient.
 
+If you have a [CUDA compatible GPU](https://en.wikipedia.org/wiki/CUDA) then you need to install the [CUDA drivers](https://developer.nvidia.com/cuda-downloads) to benefit from it. Without the correct CUDA drivers, DeepLabCut will still successfully analyse data but will do so by falling-back to using your CPU instead, which will likely be many times slower.
+
 In _AAA_, you can open the DeepLabCut settings menu either from the `Edit Splines` dialog or from the `Live Tracker` tabs of `Ultrasonic Setup` or `Video Setup`. (These can be accessed by right-clicking on an ultrasound or video display). You will be presented with a few options: one of them will be a place where you should type in the full path to your Anaconda directory (with no trailing backslash):
 
 [![Image showing where to type the full path to your installed Anaconda directory into the Articulate Assistant Advanced Deep Lab Cut options menu](.Media/AAA_DeepLabCut_path2_small.png)](.Media/AAA_DeepLabCut_path2.png)
-
-If you have a [CUDA compatible GPU](https://en.wikipedia.org/wiki/CUDA) then you need to install the [CUDA drivers](https://developer.nvidia.com/cuda-downloads) to benefit from it. Without the correct CUDA drivers, DeepLabCut will still successfully analyse data but will do so by falling-back to using your CPU instead, which will likely be many times slower.
 
 
 ----------------------------
@@ -77,6 +77,10 @@ Please put each such folder inside the `\DLCModels` folder in your _AAA_ directo
 If no `\DLCModels` folder exists you may not be running a recent enough version of _AAA_ to support integrated DeepLabCut. Consider [updating your _AAA_ version](http://www.articulateinstruments.com/downloads/). If you have a sufficiently recent version of _AAA_ and the folder is still missing, you can safely create it yourself and put the model folders in it, as above.
 
 If you have used DeepLabCut before, you can also use models which you have trained or used previously with _AAA_, but to use them you must first convert them to DeepLabCut-Live format. [Official documentation on this can be found here.](https://deeplabcut.github.io/DeepLabCut/docs/HelperFunctions.html#new-model-export-function) For example: if your DeepLabCut model was in `C:\MyModel` then inside your appropriate DeepLabCut conda environment and within iPython and after importing DeepLabCut, you could use the command `deeplabcut.export_model("C:\MyModel\config.yaml", iteration=None, shuffle=1, trainingsetindex=0, snapshotindex=None, TFGPUinference=True, overwrite=False, make_tar=True)` substituting the other arguments with your own settings. It would then export the model to the folder `C:\MyModel\exported-models`. It may require the folder `\exported-models` to **NOT** exist or the process might fail.
+
+At this point, you should have now installed your preferred version of [Anaconda](#using-deeplabcut-for-the-first-time), typed its path into AAA, and [installed at least one model](#installing-deeplabcut-models). The final step is to tell AAA to automatically install the DeepLabCut software, and this can be done in either of two ways:
+ - Restart AAA and follow the instructions to install DeepLabCut that should appear at startup.
+ - Attempt to use DeepLabCut in AAA, either by enabling real-time live DLC tracking or by attempting to batch fit splines to an ultrasound or video recording using DLC: AAA will automatically install DLC the first time you do this if it isn't installed yet. Instructions on how to use DLC in AAA can be found below.
 
 
 -----------------------
