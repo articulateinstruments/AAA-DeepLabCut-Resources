@@ -2,7 +2,7 @@
 ------------------------
 What does this model do?
 ------------------------
-This model is for tracking human oral anatomy (tongue surface, hyoid, short-tendon, and mandible) in ultrasound images and video.
+This model is for tracking human oral anatomy (tongue surface, hyoid, short-tendon, and mandible) in mid-sagittal ultrasound images and video.
 
 14 points are tracked:
  - 11 points of tongue surface
@@ -10,11 +10,18 @@ This model is for tracking human oral anatomy (tongue surface, hyoid, short-tend
  - 1 point: Mandible
  - 1 point: Short-tendon
 
-In other words, this tracks the visible inner borders of the lips: The left/right corners of the mouth and 3 evenly spaced points along the flesh of the lips for each of the upper and lower lips.
+The 11 tongue surface points cover the upper tongue surface from the furthest extent of the tongue tip (the most rostral point) all the way back to the vallecula where the epiglottis meets the root of the tongue. The points near the tip of the tongue are more closely spaced than the other tongue surface points so as to reflect the greater flection of that region of the tongue. In other words, the spacings of each point between the 1st and 7th points (vallecula to tongue dorsum) are the same as each other, and then the spacings between the points from the 7th to 11th (dorsum to tip) are the same as each other, but twice as densely packed.
 
-As the flesh of the lips moves, the model is trained to track the movement. This model is designed to track horizontal movement of the lip anatomy in addition to vertical movement, so that asymmetrical lip movements are correctly tracked.
+As viewed in mid-sagittal ultrasound:
+- The "Hyoid" point tracks the centre of the hyoid bone.
+- The "Mandible" point tracks the lower point of where the genio-hyoid attaches (inferior mental spine).
+- The "Short-tendon" point tracks the superior tubercle (superior mental spine) of the mandible where the short-tendon attaches.
 
-The model gives the most accurate results when the lips are centred in the image, with the camera oriented such that the nose is directly above the lips, and positioned/zoomed such that the distance between the commissures is approximately half the width of the image.
+As the flesh of the tongue moves, the model is trained to track the movement. This model is designed to track horizontal movement of the tongue anatomy in addition to vertical movement, and place the points closer together where the tongue bunches and further apart where it stretches.
+
+The model gives the most accurate results with exactly mid-sagittal ultrasound where both the mandible and hyoid are in view. The model is quite robust to different values of probe field-of-view from as low as 60 degrees or as high as 120 degrees, but works best with approximately 90 degrees. It's also robust to different probe depths and different sizes of human subject.
+
+It is important to note that the model can be confused by user-interface elements drawn into the image such as text or scale bars, and these can disrupt the model's ability to track accurately. It also struggles with backgrounds to the ultrasound image which are not black. If you are using an ultrasound system which has unavoidable user-interface clutter that you are unable to disable, please contact us and send us a sample of your data: If we have time we can add it to the model's training so it can cope with screen clutter better.
 
 
 ----------
