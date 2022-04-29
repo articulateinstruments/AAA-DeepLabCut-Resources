@@ -113,6 +113,8 @@ In _AAA_ you can **only** fit 2D splines using DeepLabCut due to fan splines bei
 ---------------
 Troubleshooting
 ---------------
+### I tried to install Anaconda3/Miniconda3 in Windows 7 and get "Error installing: Failed to create menus"
+Newer versions of Anaconda3/Miniconda3 do not install on Windows 7.  Go to the archive page (https://repo.anaconda.com/miniconda/) and install 'Miniconda3-4.7.12.1-Windows-x86_64.exe' instead of the latest version.
 ### How do I know which DeepLabCut model to use?
 This repository provides multiple models for different purposes. Inside each model's folder is a separate README file which explains the model's purpose and behaviour. There are also multiple models for each purpose, such as multiple models for human oral mid-sagittal ultrasound: these differ in a tradeoff of accuracy and speed.
 
