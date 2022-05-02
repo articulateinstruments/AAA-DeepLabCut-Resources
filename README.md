@@ -13,7 +13,7 @@ System Requirements
 The files in this repository are designed for use with [_Articulate Assistant Advanced_](http://www.articulateinstruments.com/downloads/),  software for speech articulatory analysis and recording by Articulate Instruments.
 
 You will also need:
- - Windows 10 or later (Windows 7 or 8 might work but are not officially supported; use at your own risk).
+ - Windows 10 or later (Windows 7 or 8 work but see troubleshooting; use at your own risk).
  - At least 3.6 GB free space on your hard drive to install downloaded software to.
  - Analysing recorded data and real-time tracking should work on any computer, but if you want live-tracking at a high framerate and much faster data analysis then you will need a [CUDA compatible GPU](https://en.wikipedia.org/wiki/CUDA) in your computer. CUDA is only compatible with Windows 10 and later.
 
@@ -34,9 +34,9 @@ What is DeepLabCut?
 -------------------
 [DeepLabCut](http://www.mackenziemathislab.org/deeplabcut) is popular free software which you can use to train machine-learning models that automatically determine the coordinates of real-world objects from images and video. _Articulate Assistant Advanced_ interfaces with it directly so you can automatically annotate ultrasound data and video-camera data with splines just by using the normal _AAA_ menus.
 
-DeepLabCut can run on any computer running Windows 10 and later (and might also work on Windows 7 and 8, but doing so is untested and not officially supported). If your computer also contains a [CUDA GPU](https://en.wikipedia.org/wiki/CUDA) then DeepLabCut can use this to process data a lot faster.
+DeepLabCut can run on any computer running Windows 10 and later (see troubleshooting for running on Windows 7 and 8). If your computer also contains a [CUDA GPU](https://en.wikipedia.org/wiki/CUDA) then DeepLabCut can use this to process data a lot faster.
 
-In _AAA_ you can either use DeepLabCut to spline existing recordings or use it to track anatomy live in real-time. For live tracking, a computer with a CUDA GPU (as of the year 2022) can process data fast enough to do real-time tracking at 50-60 Hz (which is the fastest that most computer monitors can display), and if you don't have a CUDA GPU then a common office PC in 2022 can do 15-25 Hz.
+In _AAA_ you can either use DeepLabCut to spline existing recordings or use it to track anatomy live in real-time. For live tracking, a computer with a CUDA GPU (NVIDIA Geforce 10 series and 20 series. [Note 30 series support coming soon]) can process data fast enough to do real-time tracking at 50-60 Hz (which is the fastest that most computer monitors can display), and if you don't have a CUDA GPU then a common office PC in 2022 can do 15-25 Hz.
 > _The lower framerate on a common office PC is fast enough to be adequate for live-tracking most tongue movements, but some particularly fast tongue movements such as trills may be too fast to live-track without a higher-end PC and/or a CUDA GPU. However, even on a budget PC recording data for later analysis will always be done at the maximum framerate of the ultrasound hardware, which depending on the system will likely be between 80 - 120 Hz._
 
 DeepLabCut was created by [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ), [Mamidanna, P.](https://scholar.google.co.uk/citations?user=5x1hXY8AAAAJ), [Cury, K.M.](https://scholar.google.co.uk/citations?user=KpSNbF4AAAAJ) et al. (2018) ([10.1038/s41593-018-0209-y](https://www.nature.com/articles/s41593-018-0209-y)) with additional software by [Nath, T.](https://scholar.google.co.uk/citations?user=KXmpTjwAAAAJ), [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ) et al. (2019) ([10.1038/s41596-019-0176-0](https://www.nature.com/articles/s41596-019-0176-0)) and [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ), [Biasi T.](https://www.researchgate.net/profile/Thomas-Biasi) et al. (2021)
