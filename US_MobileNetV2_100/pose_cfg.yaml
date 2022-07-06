@@ -13,6 +13,8 @@ all_joints:
 - - 11
 - - 12
 - - 13
+- - 14
+- - 15
 all_joints_names:
 - vallecula
 - tongueRoot1
@@ -28,18 +30,34 @@ all_joints_names:
 - hyoid
 - mandible
 - shortTendon
+- thyroid1
+- thyroid2
 alpha_r: 0.02
+apply_prob: 0.5
 batch_size:
+clahe: true
+claheratio: 0.1
 crop_pad: 0
 cropratio: 0.4
-dataset: training-datasets\iteration-0\UnaugmentedDataSet_SpeechProductionFeb12\SpeechProduction_AW34shuffle1.mat
-dataset_type: imgaug
+dataset: training-datasets\iteration-0\UnaugmentedDataSet_UltrasoundJan28\Ultrasound_AW100shuffle3.mat
+dataset_type: default
 decay_steps: 30000
 deterministic: false
 display_iters: 1000
+edge: false
+emboss:
+  alpha:
+  - 0.0
+  - 1.0
+  embossratio: 0.1
+  strength:
+  - 0.5
+  - 1.5
 fg_fraction: 0.25
 global_scale: 0.8
-init_weights: E:\DLC_for_S_P_Alan_rerun_100\Ultrasound\dlc-models\iteration-0\SpeechProductionFeb12-trainset34shuffle1\train\snapshot-800000
+histeq: true
+histeqratio: 0.1
+init_weights: C:\Users\Alan\Documents\DLC_AlSw_mirror\Ultrasound\dlc-models\iteration-0\UltrasoundJan28-trainset100shuffle3\train\snapshot-800000
 intermediate_supervision: false
 intermediate_supervision_layer: 12
 location_refinement: true
@@ -53,9 +71,10 @@ mean_pixel:
 - 123.68
 - 116.779
 - 103.939
-metadataset: training-datasets\iteration-0\UnaugmentedDataSet_SpeechProductionFeb12\Documentation_data-SpeechProduction_34shuffle1.pickle
+metadataset: training-datasets\iteration-0\UnaugmentedDataSet_UltrasoundJan28\Documentation_data-Ultrasound_100shuffle3.pickle
 min_input_size: 64
-mirror: false
+mirror: true
+multi_stage: false
 multi_step:
 - - 0.005
   - 10000
@@ -66,14 +85,14 @@ multi_step:
 - - 0.001
   - 1030000
 net_type: mobilenet_v2_1.0
-num_joints: 14
+num_joints: 16
 num_outputs: 1
 optimizer: sgd
 pairwise_huber_loss: false
 pairwise_predict: false
 partaffinityfield_predict: false
 pos_dist_thresh: 17
-project_path: C:\Users\localaccount\Documents\DLC_for_S_P_Alan_rerun_100\Ultrasound
+project_path: C:\Users\Alan\Documents\DLC_AlSw_mirror\Ultrasound
 regularize: false
 rotation: 25
 rotratio: 0.4
@@ -81,8 +100,10 @@ save_iters: 50000
 scale_jitter_lo: 0.5
 scale_jitter_up: 1.25
 scoremap_dir: test
+sharpen: false
+sharpenratio: 0.3
 shuffle: true
-snapshot_prefix: E:\DLC_for_S_P_Alan_rerun_100\Ultrasound\dlc-models\iteration-0\SpeechProductionFeb12-trainset34shuffle1\train\snapshot
+snapshot_prefix: C:\Users\Alan\Documents\DLC_AlSw_mirror\Ultrasound\dlc-models\iteration-0\UltrasoundJan28-trainset100shuffle3\train\snapshot
 stride: 8.0
 weigh_negatives: false
 weigh_only_present_joints: false

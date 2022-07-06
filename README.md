@@ -62,7 +62,7 @@ Installing DeepLabCut models
 ----------------------------
 You must make at least one Model available to _AAA_ or else it cannot use DeepLabCut to analyse data. Each Model is trained to perform a specific task, for example annotating tongue and mouth anatomy from mid-sagittal ultrasound images, or annotating lips from camera images captured facing the front of the mouth.
 
-Models trained by Articulate Instruments for use in speech production analysis and visual feedback are available for <a href="#top">free download here</a> in this repository. Over time the models available here may be updated to improve accuracy or performance, or new models might be added to perform different analyses.
+Models trained by Articulate Instruments for use in speech production analysis and visual feedback are available for free download in this repository at the <a href="#top">top of this page</a>. You can download individual models from [Releases](https://github.com/articulateinstruments/AAA-DeepLabCut-Resources/releases) or [clone this repository](#how-should-I-clone-this-repository) to your `AAA\DLCModels` folder. Over time the models available here may be updated to improve accuracy and/or performance, and new models might be added to perform different analyses.
 
 Each model should be a folder containing:
  - `Snapshot` files
@@ -144,3 +144,17 @@ You can also change the following properties, but it is strongly advised that yo
  - _How changes of aspect ratio should be handled in the resizing operation_
 
 This is because DeepLabCut models' training is specific to an image resolution and tracking accuracy deteriorates the more you diverge from the image resolution and aspect ratio used in training.
+
+### How should I clone this repository?
+The advantage of cloning this repo to your `AAA\DLCModels` folder is you can simply pull changes whenever we update the models or add new ones and they will be immediately available within AAA.
+
+Please ensure that you clone this repository to within `AAA\DLCModels` and **not** a folder within it. For example, it should be cloned such that a model called `ResNet50` would be at the path:
+- `AAA\DLCModels\ResNet50\` = **GOOD**
+- `AAA\DLCModels\AAA-DeepLabCut-Resources\ResNet50` = **BAD**
+
+Links to clone are available at the <a href="#top">top of this page</a>.
+
+If you are unfamiliar with using _Git_, you can quickly clone this repository in this way by opening a _Windows Command Prompt_ or _Powershell_ window and navigating it to the `AAA\DLCModels` folder, then typing:
+`git clone articulateinstruments/AAA-DeepLabCut-Resources`
+
+Once you clone it in this way, you can open this new local repo you have created in any Git software of your choice, such as _GitHub Desktop, GitKraken, TortoiseGit, VSCode_, etc. From there, you can easily download updates and get new models by fetching and pulling. If you only want to work from the command-line, you can open a _Windows Command Prompt_ or _Powershell_ window and navigate it to the `AAA\DLCModels` folder, then type: `git pull`

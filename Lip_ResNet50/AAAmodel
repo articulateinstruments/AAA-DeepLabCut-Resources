@@ -1,5 +1,5 @@
 // (string) Display name for the model
-name:ResNet50: Upper-Lip (5pt), Lower-Lip (5pt)
+name:ResNet50 (v0.1.0): Upper-Lip (5pt), Lower-Lip (5pt)
 
 // (comma and semicolon separated integers) Description of how the points form contiguous splines,
 //  eg. 0,1,2;2,5,4 would mean the first 3 points which the model returns form a single contiguous spline, and then 3rd, 6th and 5th points form a second spline with its points in that order, which also shares a point with the first spline (the 3rd point). You can do arbitrary overlaps and ommissions this way, and specify the points in any order.
@@ -19,10 +19,6 @@ latency:140
 //  1 = Crop the long axis of the image to fit
 //  2 = Letterbox pad the short axis of the image to fit
 aspect:2
-
-// Currently unused; not read by or written from AAA
-speedgpu:157
-speedcpu:4.0
 
 // (integer) Pixel width of image the DeepLabCut model expects
 width:320
