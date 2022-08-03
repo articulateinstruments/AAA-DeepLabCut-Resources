@@ -6,8 +6,9 @@
 > 4. [Analysing data and live-tracking](#using-deeplabcut-in-aaa)
 > 5. [Troubleshooting Problems](#troubleshooting)
 
+----------------------------------------------
+# &rarr; [Download tongue and lip models here](https://github.com/articulateinstruments/AAA-DeepLabCut-Resources/releases) &larr;
 
--------------------
 System Requirements
 -------------------
 The files in this repository are designed for use with [_Articulate Assistant Advanced_](http://www.articulateinstruments.com/downloads/),  software for speech articulatory analysis and recording by Articulate Instruments.
