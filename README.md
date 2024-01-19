@@ -43,28 +43,37 @@ In _AAA_ you can either use DeepLabCut to spline existing recordings or use it t
 DeepLabCut was created by [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ), [Mamidanna, P.](https://scholar.google.co.uk/citations?user=5x1hXY8AAAAJ), [Cury, K.M.](https://scholar.google.co.uk/citations?user=KpSNbF4AAAAJ) et al. (2018) ([10.1038/s41593-018-0209-y](https://www.nature.com/articles/s41593-018-0209-y)) with additional software by [Nath, T.](https://scholar.google.co.uk/citations?user=KXmpTjwAAAAJ), [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ) et al. (2019) ([10.1038/s41596-019-0176-0](https://www.nature.com/articles/s41596-019-0176-0)) and [Mathis, A.](https://scholar.google.co.uk/citations?user=Y1xCzE0AAAAJ), [Biasi T.](https://www.researchgate.net/profile/Thomas-Biasi) et al. (2021)
 
 
------------------------------------
-Using DeepLabCut for the first time
------------------------------------
-DeepLabCut is a powerful but often complicated software tool. Many people struggle a lot with their first time using it. To make life easier, _AAA_ handles most of the complicated stuff automatically so you can work with a much simpler interface. If you want to use DeepLabCut in a way not covered by AAA's simplified interface, [you can read a tutorial on using DeepLabCut's more advanced features with AAA here](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production#readme). If you only want to fit 2D splines (either individually or as a batch process) and/or use live-tracking then just follow the rest of the instructions in this document.
+----------------------------------------
+How to use DeepLabCut for the first time
+----------------------------------------
+DeepLabCut is a powerful but often complicated software tool. Many people struggle a lot with their first time using it. To make life easier, _AAA_ handles most of the complicated stuff automatically so you don't have to. If you only want to fit splines to your data (either individually or as a batch process) and/or use live-tracking for oral anatomy then just follow the rest of the instructions in this document. If you want to use DeepLabCut in a more complicated way not covered by AAA's simplified interface, [you can read a tutorial on using DeepLabCut's more advanced features with AAA here](https://github.com/articulateinstruments/DeepLabCut-for-Speech-Production#readme). 
 
 If this is your first time using DeepLabCut, you will first need to manually install a free open-source software tool called [Anaconda](https://docs.conda.io/en/latest/miniconda.html). It is a popular data science tool which _AAA_ will automatically communicate with to install, update and run DeepLabCut. If you already have a full version of Anaconda installed you can use that instead.
 > There are two versions of the Anaconda software to choose between. [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a compact, simplified version of Anaconda that takes less file space on your computer and has everything needed to run DeepLabCut in AAA. However, it lacks the broad range of data science tools and pre-installed packages that are included in the [full version of Anaconda](https://www.anaconda.com/products/distribution#Downloads), which require a larger download and more hard-drive space. If you don't plan to use Anaconda for any other purpose than DeepLabCut in AAA then Miniconda is sufficient.
-
-If you have an [NVIDIA CUDA compatible GPU](https://en.wikipedia.org/wiki/CUDA) then to benefit from it you need to do the following additional steps:
-1. Install the [CUDA 11.2 drivers](https://developer.nvidia.com/cuda-11.2.0-download-archive) _(it must be this version; newer versions of CUDA won't work)_. Without the correct CUDA drivers, DeepLabCut will still successfully analyse data but will do so by falling-back to using your CPU instead, which will likely be many times slower.
-2. _After_ successfully installing CUDA 11.2, copy [these dll files](https://www.dropbox.com/scl/fo/6spbo6s3j3orsd61ienon/h?rlkey=wnw92inyyl5o5sqil245ylh2z&dl=0) into the `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin` folder. 
-> **If you get an error**: If your computer already has up-to-date Nvidia drivers installed then when you attempt to install the CUDA 11.2 drivers it may give an error saying that it refuses to install version 11.2 when there is more recent Nvidia software already on the computer; to resolve this you should **uninstall** the `Nvidia Frameview SDK`, which you can do by opening your Windows Start menu and opening `Add or remove programs`, then using the search box to search for `Frameview`, clicking on it when it appears, and uninstalling it. After doing this, restart your computer and then try installing CUDA 11.2 again. If this does not work, you may need to also remove any other versions of CUDA on your computer using a similar method.
-
 
 In _AAA_, you can open the DeepLabCut settings menu either from the `Edit Splines` dialog or from the `Live Tracker` tabs of `Ultrasonic Setup` or `Video Setup`. (These can be accessed by right-clicking on an ultrasound or video display). You will be presented with a few options: one of them will be a place where you should type in the full path to your Anaconda directory (with no trailing backslash):
 
 [![Image showing where to type the full path to your installed Anaconda directory into the Articulate Assistant Advanced Deep Lab Cut options menu](.Media/AAA_DeepLabCut_path2_small.png)](.Media/AAA_DeepLabCut_path2.png)
 
 
-----------------------------
-Installing DeepLabCut models
-----------------------------
+If your computer contains an [NVIDIA CUDA compatible GPU](https://en.wikipedia.org/wiki/CUDA) then your computer can run DeepLabCut up-to 4 times faster. However, to benefit from this additional performance you must complete all of the following _additional_ installation steps:
+1. **Install [Visual Studio 2019](https://my.visualstudio.com/Downloads?q=visual%20studio%20community%202019) _(it must be the 2019 version; more recent versions of Visual Studio won't help)_. Ensure that Visual Studio 2019 has the `Desktop development with C++` _Workload_ enabled.** If you already have a version of Visual Studio 2019 installed, you can modify it to include the _Workload_ by opening your Windows Start menu and searching for `Visual Studio Installer` and running it, then _modifying_ your existing Visual Studio 2019. 
+> You can reduce the hard-drive space that Visual Studio 2019 takes up by deselecting certain _Individual Components_ of the `Desktop development with C++` _Workload_ that are not required: you **must** keep `MSVC v142 ...` and `C++ CMake Tools for Windows` enabled, but you can safely de-select the other components.
+
+2. **Install the [CUDA 11.2 drivers](https://developer.nvidia.com/cuda-11.2.0-download-archive) _(it must be this version; more recent versions of CUDA won't work)_.** Without the correct CUDA drivers, DeepLabCut will still successfully analyse data but will do so by falling-back to using your CPU instead, which will likely be many times slower.
+3. **_After_ successfully installing CUDA 11.2, copy [these dll files](https://www.dropbox.com/scl/fo/6spbo6s3j3orsd61ienon/h?rlkey=wnw92inyyl5o5sqil245ylh2z&dl=0) into the `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin` folder.**
+> **If you get an error**: If your computer already has up-to-date Nvidia drivers installed then when you attempt to install the CUDA 11.2 drivers it may give an error saying that it refuses to install version 11.2 when there is more recent Nvidia software already on the computer; to resolve this you should **uninstall** the `Nvidia Frameview SDK`, which you can do by opening your Windows Start menu and opening `Add or remove programs`, then using the search box to search for `Frameview`, clicking on it when it appears, and uninstalling it. After doing this, restart your computer and then try installing CUDA 11.2 again. If this does not work, you may need to also remove any other versions of CUDA on your computer using a similar method.
+
+If you performed the above steps correctly, then you can verify that it is working by attempting to use DeepLabCut in AAA _(for instructions on how to do so, please continue reading this document)_. When you begin using DeepLabCut to apply a spline or do live-tracking, a Windows Command Prompt window will appear in your taskbar at the bottom of your screen. Please click on it to view it and then read the text within it. If you installed CUDA correctly as above, then you should see a line appear part-way through the text which says:
+
+**`Created device with ... memory  --> device: 0, name: [Your GPU's name]`**
+
+You can find the name of your GPU by opening your Windows Start menu and opening `Device Manager`, then within that open the subheading `Display Adapters`, which will list all the GPUs in your computer. If you have at least one NVIDIA device listed there then DeepLabCut will be able to use it if you performed the above steps correctly.
+
+
+------------------------
+Adding DeepLabCut models
+------------------------
 You must make at least one Model available to _AAA_ or else it cannot use DeepLabCut to analyse data. Each Model is trained to perform a specific task, for example annotating tongue and mouth anatomy from mid-sagittal ultrasound images, or annotating lips from camera images captured facing the front of the mouth.
 
 Models trained by Articulate Instruments for use in speech production analysis and visual feedback are available for free download in this repository at the <a href="#top">top of this page</a>. You can download individual models from [Releases](https://github.com/articulateinstruments/AAA-DeepLabCut-Resources/releases) or [clone this repository](#how-should-I-clone-this-repository) to your `AAA\DLCModels` folder. Over time the models available here may be updated to improve accuracy and/or performance, and new models might be added to perform different analyses.
