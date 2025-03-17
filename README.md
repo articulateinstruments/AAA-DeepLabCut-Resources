@@ -7,7 +7,9 @@
 > 5. [Troubleshooting Problems](#troubleshooting)
 
 ----------------------------------------------
-# &rarr; [Download tongue and lip models here](https://github.com/articulateinstruments/AAA-DeepLabCut-Resources/releases) &larr;
+## &rarr; [Our latest DeepLabCut models are available through our AAA installer](https://www.articulateinstruments.com/downloads/) &larr;
+
+Old outdated models can be downloaded [here](https://github.com/articulateinstruments/AAA-DeepLabCut-Resources/releases).
 
 System Requirements
 -------------------
